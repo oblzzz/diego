@@ -1,0 +1,96 @@
+
+/* element.style {
+    transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(360deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+} */
+
+
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.text-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 1em;
+}
+
+.text-primary,
+.text-secondary {
+  display: block;
+  transition: transform .45s cubic-bezier(.76,0,.24,1);
+}
+
+.text-primary {
+  transform: translateY(0%);
+}
+
+.text-secondary {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(100%);
+}
+
+.nav-link:hover .text-primary {
+  transform: translateY(-100%);
+}
+
+.nav-link:hover .text-secondary {
+  transform: translateY(0%);
+}
+
+/* ----------------- *	lixo	* ----------------- */ 
+ 
+
+/* CONTAINER DO TEXTO */
+
+.text-wrapper{
+  position: relative;
+  display: inline-block;
+
+  height: 1em;
+  overflow: hidden;
+
+  line-height: 1;
+}
+
+/* TEXTOS */
+
+.text-primary,
+.text-secondary{
+  display: block;
+
+  transition:
+    transform .45s cubic-bezier(.76,0,.24,1),
+    text-shadow .25s ease;
+}
+
+/* TEXTO NORMAL */
+
+.text-primary{
+  transform: translateY(0%);
+}
+
+/* TEXTO ESCONDIDO */
+
+.text-secondary{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateY(100%);
+}
+
+/* HOVER */
+
+.nav-link:hover .text-primary{
+  transform: translateY(-100%);
+}
+
+.nav-link:hover .text-secondary{
+  transform: translateY(0%);
+}
