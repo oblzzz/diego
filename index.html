@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    />
   <title>Diego Uzai</title>
-
   <meta
     name="description"
-    content="Portfólio landing page de Diego Uzai"
-  >
-
+    content="Portfólio landing page de Diego Uzai">
+  <meta
+        name="author"
+        content="Diego Uzai"
+    />
+  <meta
+        name="theme-color"
+        content="#5900FF"
+    />
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="assets/favicon/favicon.svg"
+    />
   <link rel="stylesheet" href="assets/css/style.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
-    rel="stylesheet"
-  >
-
+    rel="stylesheet">
 </head>
-
 <body>
 
-<!-- =========================================================
+  <!-- =========================================================
 HEADER
 ========================================================= -->
 
 <header>
-
   <!-- HERO -->
-
   <section id="home" class="hero">
-
     <div class="hero-desktop">
-      <img src="assets/images/hero.webp" alt="">
+      <img src="assets/img/hero.webp" alt="">
     </div>
-
     <div class="hero-mobile">
-      <img src="assets/images/hero-mobile.webp" alt="">
+      <img src="assets/img/hero-mobile.webp" alt="">
     </div>
-
   </section>
 
   <!-- =========================================================
   NAV DESKTOP
   ========================================================= -->
 
-  <nav class="nav-desktop">
-
+  <!-- <nav class="nav-desktop">
     <ul>
-
       <li>
         <div class="text-rotate">
           <a class="first-text" href="#home">HOME</a>
@@ -83,32 +83,83 @@ HEADER
       </li>
 
     </ul>
+  </nav> -->
 
-  </nav>
+  <nav class="nav-desktop">
+  <ul>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#home">
+          <span data-text="HOME">HOME</span>
+        </a>
+
+        <a href="#home">
+          <span data-text="HOME">HOME</span>
+        </a>
+
+      </div>
+    </li>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#sobre">
+          <span data-text="SOBRE">SOBRE</span>
+        </a>
+
+        <a href="#sobre">
+          <span data-text="SOBRE">SOBRE</span>
+        </a>
+
+      </div>
+    </li>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#projetos">
+          <span data-text="PROJETOS">PROJETOS</span>
+        </a>
+
+        <a href="#projetos">
+          <span data-text="PROJETOS">PROJETOS</span>
+        </a>
+
+      </div>
+    </li>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#contato">
+          <span data-text="CONTATO">CONTATO</span>
+        </a>
+
+        <a href="#contato">
+          <span data-text="CONTATO">CONTATO</span>
+        </a>
+
+      </div>
+    </li>
+
+  </ul>
+</nav>
 
   <!-- =========================================================
   DIVIDER MENU MOBILE
   ========================================================= -->
 
   <section class="divider-menu">
-
     <div class="divider-line"></div>
-
     <button
       id="menu-toggle"
       class="menu-trigger"
-      aria-label="Abrir menu"
-    >
-
-      <img
-        src="assets/icons/menu-btn.svg"
-        alt=""
-      >
-
+      aria-label="Abrir menu">
+      <img src="assets/icons/menu-btn.svg" alt="">
     </button>
-
   </section>
-
 </header>
 
 <!-- =========================================================
@@ -122,23 +173,15 @@ SIDE MENU MOBILE
 ========================================================= -->
 
 <nav id="side-menu" class="side-menu">
-
   <!-- BOTÃO FECHAR -->
-
   <button
     id="close-menu"
     class="close-menu"
-    aria-label="Fechar menu"
-  >
-
+    aria-label="Fechar menu">
     <img src="assets/icons/x-bk.svg" alt="">
-
   </button>
-
   <!-- LISTA -->
-
   <ul class="menu-list">
-
     <li>
       <a href="#home">
         <span data-text="HOME">HOME</span>
@@ -164,7 +207,6 @@ SIDE MENU MOBILE
     </li>
 
   </ul>
-
 </nav>
 
 <!-- =========================================================
@@ -172,33 +214,47 @@ MAIN
 ========================================================= -->
 
 <main>
-
   <section class="video-section">
-
     <video
       class="liquid-video"
       autoplay
       muted
       loop
-      playsinline
-    >
+      playsinline>
 
       <source
         src="assets/videos/liquid.mp4"
-        type="video/mp4"
-      >
-
+        type="video/mp4">
     </video>
-
   </section>
 
+  <div class="grid-bg"></div> 
+
+  <img src="assets/img/diego-uzai.svg" alt="Nome do proprietário do site, Diego Uzai" class="nome">
+
+  <div class="nomes-container">
+    <img src="assets/img/diego.svg" alt="Nome do proprietário do site, Diego Uzai" class="nome">
+    <img src="assets/img/uzai.svg" alt="Nome do proprietário do site, Diego Uzai" class="nome">
+  </div>
+
+  <div class="button">
+    <a href="#projetos" class="cta"><span>PROJETOS</span></a>
+  </div>
+
   <section id="sobre"></section>
-  <section id="projetos"></section>
-  <section id="contato"></section>
+  
+  <div class="teste">
+  </div>
+
+  <section id="projetos">
+  <h2>Projetos</h2>
+</section>
+
+  <section id="contato">
+  <h2>Contato</h2>
+</section>
 
 </main>
-
 <script src="assets/js/menu.js"></script>
-
 </body>
 </html>
