@@ -30,6 +30,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
     rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -38,13 +40,14 @@ HEADER
 ========================================================= -->
 
 <header>
+  <h1 class="sr-only">Portfólio de Diego Uzai - Desenvolvedor Web e designer</h1>
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-desktop">
-      <img src="assets/img/hero.webp" alt="">
+      <img src="assets/img/hero/hero.webp" alt="">
     </div>
     <div class="hero-mobile">
-      <img src="assets/img/hero-mobile.webp" alt="">
+      <img src="assets/img/hero/hero-mobile.webp" alt="">
     </div>
   </section>
 
@@ -157,7 +160,7 @@ HEADER
       id="menu-toggle"
       class="menu-trigger"
       aria-label="Abrir menu">
-      <img src="assets/icons/menu-btn.svg" alt="">
+      <img src="assets/icons/menu-pink.svg" alt="">
     </button>
   </section>
 </header>
@@ -214,6 +217,7 @@ MAIN
 ========================================================= -->
 
 <main>
+
   <section class="video-section">
     <video
       class="liquid-video"
@@ -223,28 +227,110 @@ MAIN
       playsinline>
 
       <source
-        src="assets/videos/liquid.mp4"
+        src="assets/video/liquid.mp4"
         type="video/mp4">
     </video>
   </section>
 
   <div class="grid-bg"></div> 
 
-  <img src="assets/img/diego-uzai.svg" alt="Nome do proprietário do site, Diego Uzai" class="nome">
 
-  <div class="nomes-container">
-    <img src="assets/img/diego.svg" alt="Nome do proprietário do site, Diego Uzai" class="nome">
-    <img src="assets/img/uzai.svg" alt="Nome do proprietário do site, Diego Uzai" class="nome">
+
+
+
+<section class="name-container">
+
+  <div class="moon">
+    <picture>
+
+      <source
+        media="(max-width: 768px)"
+        srcset="assets/img/name/mobile/moon-mob.webp"
+      >
+
+      <img
+        src="assets/img/name/desktop/moon.webp"
+        alt="Silhueta de uma lua roxa com textura granulada e brilho sutil"
+      >
+
+    </picture>
   </div>
 
-  <div class="button">
-    <a href="#projetos" class="cta"><span>PROJETOS</span></a>
+  <div class="name">
+    <picture>
+
+      <source
+        media="(max-width: 768px)"
+        srcset="assets/img/name/mobile/name-glow-mob.webp"
+      >
+
+      <img
+        src="assets/img/name/desktop/name-glow.webp"
+        alt="Nome: Diego Uzai, em efeito synthwave cromado"
+      >
+
+    </picture>
   </div>
 
-  <section id="sobre"></section>
+</section>
+
+
+
+
+
+
+
+  <!-- <section class="name-container">
+    <div class="moon">
+      <img src="assets/img/name/desktop/moon.webp" alt="Silhueta de uma lua roxa com textura granulada e brilho sutil">
+    </div>
+
+    <div class="name">
+      <img src="assets/img/name/desktop/name-glow.webp" alt="Nome: Diego Uzai, em efeito synthwave cromado">
+    </div>
+  </section> -->
+
+
+  <div class="button-cta">
+    <a href="#projetos" class="cta"><span>VEJA OS PROJETOS</span></a>
+  </div>
+
   
-  <div class="teste">
+
+  <div class="profile-container">
+    <section id="profile">
+      <div class="tagline">
+        <h2 class="cursor-blink">Desenvolvedor <br>Front-end<br> & Visual Designer</h2>
+          <p>Um bom projeto não decora a parede, ele assombra o cômodo.</p>
+      </div>
+        <div class="title profile-title">
+          <h2>PRO<br>FI<br>LE</h2>
+      </div>
+      <!-- <div class="title-mobile profile-title">
+        <h2>
+          <span>P</span>
+          <span>R</span>
+          <span>O</span>
+          <span>F</span>
+          <span>I</span>
+          <span>L</span>
+          <span>E</span>
+        </h2>
+      </div> -->
+      <div class="photo-triangle">
+        <img src="assets/img/profile/triangle.webp" alt="Imagem de Diego dentro de um neon rosa em formato de triângulo e cercado por fumaça roxa.">
+      </div>
+      <article class="bio">
+        <p>Trabalho com design há 16 anos. Entre idas e vindas, sempre acabo voltando para o que realmente gosto de fazer.
+        Hoje busco unir essa experiência à tecnologia para ampliar ainda mais as possibilidades de criação, em uma nova jornada no desenvolvimento web e programação.
+        </p>
+      </article>
+    
+    </section>
   </div>
+  
+  <!-- <div class="teste">
+  </div> -->
 
   <section id="projetos">
   <h2>Projetos</h2>
