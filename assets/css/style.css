@@ -3,12 +3,22 @@ RESET
 ========================================================= */
 
 *{
+  /* outline:1px solid red; */
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-html{
+/* html,
+body{
+  overflow-x:auto;
+} */
+
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:clip;
   scroll-behavior:smooth;
 }
 
@@ -41,15 +51,16 @@ html{
 body{
   /* background:rgb(7, 0, 20); */
   background: black;
+  width:100%;
   /* position: relative; */
-  overflow-x:hidden;
+  /* overflow-x:hidden; */
   font-family:var(--font1);
   min-height: 100vh;
 }
 
 
 
-body::before {
+/* body::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -63,7 +74,7 @@ body::before {
 
   pointer-events: none;
   z-index: -1000;
-}
+} */
 
 /* =========================================================
 HEADER
@@ -118,22 +129,21 @@ HERO
  * GRID BG
  * ============================================================ */
 
-.grid-bg{
+/* .grid-bg{
   position: fixed;
   inset: 0;
 
   background-image:
-    linear-gradient(rgba(89, 0, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(rgba(89, 0, 255, 0.3) 1px, transparent 1px),
     linear-gradient(90deg, rgba(89,0,255,0.3) 1px, transparent 1px);
-  
+
   background-size: 1.6rem 1.6rem;
-  
+
   transform: perspective(1200px) rotateX(70deg) scale(2);
 
   pointer-events: none;
   z-index: -1;
 
-  /* fade nas bordas */
   mask-image:
     radial-gradient(circle at center,
       black 45%,
@@ -145,13 +155,12 @@ HERO
       transparent 100%);
 
   opacity: .9;
-  
-}
+} */
 
-.noise-bg{
+/* .noise-bg{
   background-image: url(../img/noise.gif);
   background-repeat: repeat;
-}
+} */
 
 
 /* .teste{
@@ -494,13 +503,11 @@ EFEITO CHOQUE
 }
 
 /* ----------------- *	CTA PROJETOS	* ----------------- */ 
- 
-
-
 
 .button-cta{
   display: flex;
   justify-content: center;
+  margin: 5rem 0;
 }
 
 .cta{
@@ -592,32 +599,43 @@ NAV DESKTOP
   display: flex;
   flex-direction: column;
   margin: auto;
+  margin-top: 3rem;
   width: 90vw;
 }
 
+
 .moon img{
-  margin-top: 4rem;
-  width: 126%;
+  margin: auto;
+  width:100%;
+  display:block;
   transform:
-    translateX(-3rem)
-    translateY(0rem);
+    scale(1.1)
+
+    /* translateX(-8%); */
 }
 
  .name img{
-  position: relative;
-  width: 110%;
+  margin: auto;
+  /* margin-bottom: 10rem;x */
+  width:95%;
+  display:block;
   transform:
-    translateX(-1rem)
-    translateY(-6rem);
- }
+    /* scale(1.35) */
+    /* translateX(4.5%) */
+    translateY(-10%);
+
+  /* transform:
+    scale(1.1)
+    translateX(-2%); */
+}
 
 /* ============================================================ 
  * SESSAO PROFILE MOBILE
  * ============================================================ */
 .profile-container{
   margin: auto;
-  max-width: 100vw;
-  margin-top: 15rem;
+  max-width: 100%;
+  /* margin-top: 15rem; */
 }
 
  #profile{
@@ -651,7 +669,7 @@ NAV DESKTOP
 }
 
 .tagline p{
-  padding: 0 1rem;
+  padding: 0 1rem 2rem 1rem;
   font-size: var(--text-size);
   font-family: var(--text);
   /* background-color: #ffa4e1; */
@@ -730,28 +748,24 @@ NAV DESKTOP
 } */
 
 .photo-triangle{
-  width: 100%;
   position: relative;
-  /* width: clamp(40rem, 64vw, 84rem); */
-  justify-self: start;
-  align-self: center;
-  z-index: 1;
 }
 
 .photo-triangle img{
-  justify-self: center;
-  transform: 
-    translateX(1.5rem)
-    translateY(-.5rem);
-  width: 140%;
-  height: auto;
-  display: block;
+  width:100%;
+  display:block;
+
+  transform:
+    scale(1.3)
+    /* translateX(4.5%) */
+    translateY(15%);
 }
+
 
 .bio{
   grid-area: bio;
   align-self: center;
-  padding: .8rem 0;
+  padding: 8rem 0;
   /* padding-left: 4rem; */
 }
 
@@ -796,6 +810,13 @@ BREAKPOINT 780px DESKTOP
 ========================================================= */
 
 @media(min-width:768px){
+
+  .hero img{
+  width:100%;
+  max-width:80rem;
+  display:block;
+  padding-bottom: 2rem;
+}
 
   .grid-bg{
   background-size: 4rem 4rem;
@@ -921,7 +942,7 @@ CHOQUE DESKTOP
   display: flex;
   margin: auto;
   max-width: 100rem;
-  margin-top: 15rem;
+  margin-top: 5rem;
 }
 
  #profile{
@@ -1015,13 +1036,13 @@ CHOQUE DESKTOP
   grid-area: photo;
   grid-row: 1 / 3;
   grid-column: 1/3;
-  width: clamp(36rem, 43.3333vw + 23.0542rem, 62rem);
+  width: clamp(17rem, 28.5714vw + 11.2857rem, 37rem);
   /* width: clamp(40rem, 64vw, 84rem); */
   justify-self: start;
   align-self: center;
   transform: 
-    translateX(-9rem)
-    translateY(11rem);;
+    translateX(-1rem)
+    translateY(20%);
   z-index: 1;
 }
 
@@ -1033,9 +1054,7 @@ CHOQUE DESKTOP
 
 .bio{
   grid-area: bio;
-  align-self: center;
-  padding: 4rem 0;
-  padding-left: 4rem;
+  padding: 0;
 }
 
 .bio p{
