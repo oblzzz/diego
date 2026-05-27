@@ -18,7 +18,7 @@ html,
 body{
   
 ::selection{
-  background: rgba(89,0,255,.45);
+  background: var(--purple);
   color:#f97af7;
 
   text-shadow:
@@ -676,24 +676,27 @@ NAV DESKTOP
 .tagline>h2{
   /* padding: 0 1rem; */
   flex-shrink: 0;
-  font-size: clamp(1.3rem, -1vw + 1.5rem, .8rem);
+  font-size: clamp(1.6rem, -1vw + 1.5rem, .8rem);
   font-family: var(--title2);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--purple);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   
 
 }
 
 .tagline p{
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
   font-size: var(--text-size);
+  font-weight: 700;
   font-family: var(--text);
-  /* background-color: #ffa4e1; */
-  color: var(--purple);
-  line-height: 1.5;
-  letter-spacing: 0.05em;
+  color:#f2c1fa;
+  /* color: var(--purple); */
+  line-height: 1.6;
+  text-shadow: 0 0 10px rgb(235, 109, 220), 
+  0 0 15px rgb(235, 109, 220);
+  /* letter-spacing: 0.05em; */
     z-index: 2;
 }
 
@@ -714,6 +717,11 @@ NAV DESKTOP
     clamp(2.5rem, 6vw, 6.5rem);
   align-items: flex-start;
   color: var(--black);
+  /* color:#f2c1fa; */
+  /* text-shadow: 0 0 10px rgb(243, 0, 214), 
+  0 0 30px rgb(234, 9, 207)
+  , 
+  0 0 30px rgb(234, 9, 207); */
   /* font-size: 7rem; */
   /* font-size: clamp(6rem, 5vw, 7rem); */
   font-size: clamp(3rem, 8.3333vw + -.4896rem, 6rem);
@@ -784,21 +792,40 @@ NAV DESKTOP
 .bio{
   grid-area: bio;
   align-self: center;
-  padding-top: 10rem;
+  padding-top: 12rem;
   /* padding-left: 4rem; */
 }
 
 .bio p{
   font-size: var(--text-size);
+   font-weight: 700;
   /* padding:  0 1rem; */
   /* background-color: #ffa4e1; */
   font-family: var(--text);
-  text-indent: 3rem;
-  color: var(--purple);
-  /* color: #a031ae; */
+  /* text-indent: 3rem; */
+  /* color: var(--purple); */
+   color:#f2c1fa;
+  /* color: var(--purple); */
+  line-height: 1.6;
+  text-shadow: 0 0 10px rgb(235, 109, 220), 
+  0 0 15px rgb(235, 109, 220);
+  /* line-height: 1.5; */
+  /* letter-spacing: 0.05em; */
+  text-align: left;
+    z-index: 2;
+
+
+
+
+
+      /* padding-bottom: 2rem; */
+  /* font-size: var(--text-size); */
+ 
+  /* font-family: var(--text); */
+  /* color:#ffbfee; */
+  /* color: var(--purple); */
   line-height: 1.5;
-  letter-spacing: 0.05em;
-  text-align: justify;
+  /* letter-spacing: 0.05em; */
     z-index: 2;
 }
 
