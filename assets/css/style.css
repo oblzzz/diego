@@ -1021,8 +1021,8 @@ NAV DESKTOP
 .hud-card-content {
     position: relative;
     margin-top: .8rem;
-    min-height: 500px;
-    padding: 1.5rem;
+    /* min-height: 500px; */
+    padding: 2rem 1.5rem;
 }
 
 .hud-card-content::before {
@@ -1198,8 +1198,74 @@ NAV DESKTOP
 
 
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: -20px; */
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+.icon-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden; /* Garante que o banner não vaze */
+}
 
+.icon-item img {
+  width: 105%;
+  height: 105%;
+  transition: opacity 0.3s ease;
+}
+
+/* Esconde o ícone azul inicialmente */
+.icon-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* Rótulo como banner centralizado sobreposto */
+.icon-item::before {
+  content: attr(data-name);
+  position: absolute;
+  /* Centraliza verticalmente e horizontalmente */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Estilo do banner */
+  background: #fd2c79d9; /* Rosa sólido */
+  color: black; /* Texto preto para contraste */
+  font-family: var(--text);
+  font-weight: 800;
+  font-size: .8rem;
+  padding: 5px 20px; /* Tamanho do banner */
+  width: 100%;
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10; /* Garante que fique acima de tudo */
+  pointer-events: none;
+
+  box-shadow:
+    0 0 4px var(--pink),
+    0 0 4px var(--pink),
+    0 0 10px rgba(255,0,132,.6);
+}
+
+/* Efeito Hover */
+.icon-item:hover .icon-static {
+  opacity: 0;
+}
+.icon-item:hover .icon-hover {
+  opacity: 1;
+}
+.icon-item:hover::before {
+  opacity: 1;
+}
 
 
 
