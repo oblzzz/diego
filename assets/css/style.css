@@ -50,8 +50,9 @@ body{
   --border: 2px;
   --font1:"Montserrat",sans-serif;
   --title1: 900 1.2rem Montserrat, sans-serif;
-  --title2: Audiowide, sans-serif;
-  --text: Jura, sans-serif;
+  --title2: "Audiowide", sans-serif;
+  --text: "Jura", sans-serif;
+  --text2: "Oxanium", sans-serif;
   --text-size: clamp(1.3rem, 2vw, 1.5rem);
   --barcode-clear: "Libre Barcode 128", sans-serif;
   --barcode-text: "Libre Barcode 128 text", sans-serif;
@@ -641,7 +642,8 @@ NAV DESKTOP
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 3rem;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
   width: 90vw;
 }
 
@@ -659,13 +661,16 @@ NAV DESKTOP
  .name img{
   margin: auto;
   /* margin-bottom: 10rem;x */
-  width:95%;
+  width: 95%;
   display:block;
   transform:
-    scale(1.5)
+    /* scale(1.5) */
     /* translateX(-.7%) */
-    /* translateY(-10%); */
-
+    translateY(10%);
+/* filter:
+        drop-shadow(0 0 4px var(--pink))
+        drop-shadow(0 0 12px var(--pink))
+        drop-shadow(0 0 20px var(--pink)); */
   /* transform:
     scale(1.1)
     translateX(-2%); */
@@ -877,14 +882,7 @@ NAV DESKTOP
 
 
 
-.graphic img {
-  display: flex;
-  justify-self:center;
-  /* margin: auto; */
-  margin-top: 4rem;
-  /* border: 2px solid fuchsia; */
-  width: 115%;
-}
+
 
 
 
@@ -1156,9 +1154,10 @@ NAV DESKTOP
     var(--pink) 80%,
     transparent
 );
-  font-family: var(--text);
+  font-family: var(--text2);
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 500;
+  letter-spacing: 1px;
   padding: .25rem;
   box-shadow:
     0 0 4px var(--pink),
@@ -1201,59 +1200,110 @@ NAV DESKTOP
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* gap: -20px; */
   max-width: 600px;
   margin: 0 auto;
+  gap: .5rem;
 }
 
 .icon-item {
   position: relative;
   aspect-ratio: 1 / 1;
-  overflow: hidden; /* Garante que o banner não vaze */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible;
+
+  transition: transform .15s ease;
 }
 
+/* sobe o conjunto inteiro */
+.icon-item:hover {
+  transform: translateY(-8px);
+}
+
+/* imagens */
 .icon-item img {
-  width: 105%;
-  height: 105%;
-  transition: opacity 0.3s ease;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  transform: scale(1.25);
+
+  transition:
+    opacity .15s ease,
+    transform .15s ease;
 }
 
-/* Esconde o ícone azul inicialmente */
+/* ícone normal */
+.icon-static {
+  opacity: 1;
+}
+
+/* ícone hover */
 .icon-hover {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+
+  opacity: 0;
+
+  transform: scale(1);
+}
+
+/* troca de ícone */
+.icon-item:hover .icon-static {
   opacity: 0;
 }
 
-/* Rótulo como banner centralizado sobreposto */
+.icon-item:hover .icon-hover {
+  opacity: 1;
+  transform: scale(1.30);
+}
+
+/* banner */
 .icon-item::before {
   content: attr(data-name);
+
   position: absolute;
-  /* Centraliza verticalmente e horizontalmente */
-  top: 50%;
+
   left: 50%;
+  top: 50%;
+
   transform: translate(-50%, -50%);
-  
-  /* Estilo do banner */
-  background: #fd2c79d9; /* Rosa sólido */
-  color: black; /* Texto preto para contraste */
-  font-family: var(--text);
-  font-weight: 800;
+
+  width: 105%;
+  height: 1.7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(170, 3, 64, 0.356);
+
+  color: #0106558e;
+
+  font-family: var(--text2);
   font-size: .8rem;
-  padding: 5px 20px; /* Tamanho do banner */
-  width: 100%;
-  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
 
   opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 10; /* Garante que fique acima de tudo */
+
+  z-index: 20;
+
   pointer-events: none;
 
-  box-shadow:
-    0 0 4px var(--pink),
-    0 0 4px var(--pink),
-    0 0 10px rgba(255,0,132,.6);
+  transition: opacity .15s ease;
+
+  filter:
+    drop-shadow(0 0 5px rgb(254, 0, 93))
+    drop-shadow(0 0 6px rgb(250, 6, 95))
+    drop-shadow(0 0 8px rgb(255, 0, 132));
+}
+
+.icon-item:hover::before {
+  opacity: 1;
 }
 
 /* Efeito Hover */
@@ -1265,6 +1315,16 @@ NAV DESKTOP
 }
 .icon-item:hover::before {
   opacity: 1;
+}
+
+.graphic img {
+  display: flex;
+  justify-self:center;
+  /* margin: auto; */
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  /* border: 2px solid fuchsia; */
+  width: 109%;
 }
 
 
@@ -1512,9 +1572,9 @@ CHOQUE DESKTOP
 }
 
  .name img{
-  width:100%;
+  width:80%;
   transform:
-    scale(1.15);
+    /* scale(1.15); */
     /* translateX(4.5%) */
     /* translateY(-10%); */
 }
