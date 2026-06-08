@@ -292,6 +292,11 @@ VIDEO
   display:block;
 }
 
+.name-video{
+  width:100%;
+  display:block;
+}
+
 /* =========================================================
 OVERLAY
 ========================================================= */
@@ -1572,8 +1577,8 @@ CHOQUE DESKTOP
 }
 
  .name img{
-  width:80%;
-  transform:
+  width:90%;
+  /* transform: */
     /* scale(1.15); */
     /* translateX(4.5%) */
     /* translateY(-10%); */
