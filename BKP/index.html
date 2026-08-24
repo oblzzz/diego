@@ -3,83 +3,682 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    />
   <title>Diego Uzai</title>
-  <meta name="description" content="Portfólio landing page de Diego Uzai, desenvolvedor front-end especializado em interfaces modernas, branding, design, desenvolvimento web e responsividade."/>
-  <meta name="author" content="Diego Uzai"/>
+  <meta
+    name="description"
+    content="Portfólio landing page de Diego Uzai">
+  <meta
+        name="author"
+        content="Diego Uzai"
+    />
+  <meta
+        name="theme-color"
+        content="#5900FF"
+    />
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="assets/favicon/favicon.svg"
+    />
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Libre+Barcode+128&family=Jura:wght@300;700&family=Libre+Barcode+128+Text&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&family=Space+Grotesk:wght@300..700&family=Bitcount+Prop+Double:wght@100..900&family=Bungee+Inline&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-  <section class="hero">
-    <div class="hero-desktop"><img src="assets/images/hero.webp" alt="Imagem do criador do site com reflexos em neon rosa e azul"></div>
+
+  <!-- =========================================================
+HEADER
+========================================================= -->
+
+<header>
+  <h1 class="sr-only">Portfólio de Diego Uzai - Desenvolvedor Web e designer</h1>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-desktop">
+      <img src="assets/img/hero/hero.webp" alt="">
+    </div>
     <div class="hero-mobile">
-    <img src="assets/images/hero-mobile.webp" alt="Imagem do criador do site com reflexos em neon rosa e azul">
+      <img src="assets/img/hero/hero-mobile.webp" alt="">
     </div>
   </section>
-    <nav id="nav" class="nav">
-      <ul>
 
-          <li>
-            <div class="text-rotate">
-              <a class="first-text" href="/#home">
-                HOME
-              </a>
-              <a href="/#home">
-                HOME
-              </a>
-            </div>
-          </li>
+  <!-- =========================================================
+  NAV DESKTOP
+  ========================================================= -->
 
-          <li>
-            <div class="text-rotate">
-              <a class="first-text" href="/#sobre">
-                SOBRE
-              </a>
-              <a href="/#sobre">
-                SOBRE
-              </a>
-            </div>
-          </li>
+  <!-- <nav class="nav-desktop">
+    <ul>
+      <li>
+        <div class="text-rotate">
+          <a class="first-text" href="#home">HOME</a>
+          <a href="#home">HOME</a>
+        </div>
+      </li>
 
-          <li>
-            <div class="text-rotate">
-              <a class="first-text" href="/#projetos">
-                PROJETOS
-              </a>
-              <a href="/#projetos">
-                PROJETOS
-              </a>
-            </div>
-          </li>
+      <li>
+        <div class="text-rotate">
+          <a class="first-text" href="#sobre">SOBRE</a>
+          <a href="#sobre">SOBRE</a>
+        </div>
+      </li>
 
-          <li>
-            <div class="text-rotate">
-              <a class="first-text" href="/#projetos">
-                CONTATO
-              </a>
-              <a href="/#projetos">
-                CONTATO
-              </a>
-            </div>
-          </li>
-      </ul>
-    </nav>      
+      <li>
+        <div class="text-rotate">
+          <a class="first-text" href="#projetos">PROJETOS</a>
+          <a href="#projetos">PROJETOS</a>
+        </div>
+      </li>
+
+      <li>
+        <div class="text-rotate">
+          <a class="first-text" href="#contato">CONTATO</a>
+          <a href="#contato">CONTATO</a>
+        </div>
+      </li>
+
+    </ul>
+  </nav> -->
+
+  <nav class="nav-desktop">
+  <ul>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#home">
+          <span data-text="HOME">HOME</span>
+        </a>
+
+        <a href="#home">
+          <span data-text="HOME">HOME</span>
+        </a>
+
+      </div>
+    </li>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#profile">
+          <span data-text="SOBRE">SOBRE</span>
+        </a>
+
+        <a href="#profile">
+          <span data-text="SOBRE">SOBRE</span>
+        </a>
+
+      </div>
+    </li>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#projetos">
+          <span data-text="PROJETOS">PROJETOS</span>
+        </a>
+
+        <a href="#projetos">
+          <span data-text="PROJETOS">PROJETOS</span>
+        </a>
+
+      </div>
+    </li>
+
+    <li>
+      <div class="text-rotate">
+
+        <a class="first-text" href="#contact">
+          <span data-text="CONTATO">CONTATO</span>
+        </a>
+
+        <a href="#contact">
+          <span data-text="CONTATO">CONTATO</span>
+        </a>
+
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+  <!-- =========================================================
+  DIVIDER MENU MOBILE
+  ========================================================= -->
+
+  <section class="divider-menu">
+    <div class="divider-line"></div>
+    <button
+      id="menu-toggle"
+      class="menu-trigger"
+      aria-label="Abrir menu">
+      <img src="assets/icons/menu-pink.svg" alt="">
+    </button>
+  </section>
 </header>
-<main>
+
+<!-- =========================================================
+OVERLAY
+========================================================= -->
+
+<div id="menu-overlay" class="menu-overlay"></div>
+
+<!-- =========================================================
+SIDE MENU MOBILE
+========================================================= -->
+
+<nav id="side-menu" class="side-menu">
+  <!-- BOTÃO FECHAR -->
+  <button
+    id="close-menu"
+    class="close-menu"
+    aria-label="Fechar menu">
+    <img src="assets/icons/x-bk.svg" alt="">
+  </button>
+  <!-- LISTA -->
+  <ul class="menu-list">
+    <li>
+      <a href="#home">
+        <span data-text="HOME">HOME</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#profile">
+        <span data-text="SOBRE">SOBRE</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#projetos">
+        <span data-text="PROJETOS">PROJETOS</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#contact">
+        <span data-text="CONTATO">CONTATO</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+
+<!-- =========================================================
+MAIN
+========================================================= -->
+
+
+
   <section class="video-section">
     <video
-    class="liquid-video"
+      class="liquid-video"
+      autoplay
+      muted
+      loop
+      playsinline>
+
+      <source
+        src="assets/video/liquid.mp4"
+        type="video/mp4">
+    </video>
+  </section>
+
+  <div class="grid-bg"></div> 
+
+
+
+
+
+<section class="name-container">
+
+  <!-- <div class="moon">
+    <picture>
+
+      <source
+        media="(max-width: 768px)"
+        srcset="assets/img/name/mobile/moon-mob.webp"
+      >
+
+      <img
+        src="assets/img/name/desktop/moon.webp"
+        alt="Silhueta de uma lua roxa com textura granulada e brilho sutil"
+      >
+
+    </picture>
+  </div> -->
+
+  <!-- <div class="name">
+    <picture>
+      <img
+        src="assets/img/name/diego5.svg"
+        alt="Nome: Diego Uzai, em efeito synthwave cromado"
+      >
+    </picture>
+  </div> -->
+
+  <!-- <section class="video-section">
+    <video
+      class="name-video"
+      autoplay
+      muted
+      loop
+      playsinline>
+
+      <source
+        src="assets/video/name.mp4"
+        type="video/mp4">
+    </video>
+  </section> -->
+
+  <section class="video-section">
+  <video
+    class="name-video"
     autoplay
     muted
     loop
     playsinline>
-    <source src="assets/videos/liquid.mp4" type="video/mp4">
-    </video>
-  </section>
+
+    <source
+      src="assets/video/name.mp4"
+      type="video/mp4">
+  </video>
+</section>
+
+</section>
+
+
+
+
+
+
+
+  <!-- <section class="name-container">
+    <div class="moon">
+      <img src="assets/img/name/desktop/moon.webp" alt="Silhueta de uma lua roxa com textura granulada e brilho sutil">
+    </div>
+
+    <div class="name">
+      <img src="assets/img/name/desktop/name-glow.webp" alt="Nome: Diego Uzai, em efeito synthwave cromado">
+    </div>
+  </section> -->
+
+
+  <!-- <div class="button-cta">
+    <a href="#projetos" class="cta"><span>VEJA OS PROJETOS</span></a>
+  </div> -->
+
+  
+  <main>
+  <div class="main-container">
+    <div class="profile-container">
+      <section id="profile">
+        <div class="tagline">
+          <h2 class="cursor-blink">Desenvolvedor <br>Front-end<br> & Visual<br>Designer</h2>
+            <p>Um bom projeto não decora a parede, ele assombra o cômodo.</p>
+        </div>
+          <div class="title profile-title">
+            <h2>PRO<br>FI<br>LE</h2>
+        </div>
+        <!-- <div class="title-mobile profile-title">
+          <h2>
+            <span>P</span>
+            <span>R</span>
+            <span>O</span>
+            <span>F</span>
+            <span>I</span>
+            <span>L</span>
+            <span>E</span>
+          </h2>
+        </div> -->
+        <div class="photo-triangle">
+          <img src="assets/img/profile/x.webp" alt="Imagem de Diego dentro de um neon rosa em formato de triângulo e cercado por fumaça roxa.">
+        </div>
+        <article class="bio">
+          <p>Trabalho com design há 16 anos. Entre idas e vindas, sempre acabo voltando para o que realmente gosto de fazer.
+          Hoje busco unir essa experiência à tecnologia para ampliar ainda mais as possibilidades de criação, em uma nova jornada no desenvolvimento web e programação.
+          </p>
+        </article>
+    
+      </section>
+    
+    </div>
+    
+     <!-- ----------------- *	EXPANDIR SOBRE MIM	* ----------------- -->
+    
+    
+    
+    <!-- <section class="hud-card">
+      <div class="hud-card-title">
+          <span>QUALIFICAÇÕES</span>
+      </div>
+      <div class="hud-connector"></div>
+      <div class="hud-card-content">
+          <p>
+              Conteúdo do card aqui.
+          </p>
+      </div>
+    </section>
+    </svg> -->
+    
+    
+    
+    <section class="hud-panel">
+      <div class="hud-card-title">
+          <span>[EXTRAIR DADOS]</span>
+              <img class="eject"  src="assets/icons/eject.svg" alt="Simbolo de ejetar">
+      </div>
+      <div class="hud-card-content">
+      <div class="hud-indicator">
+      <svg viewBox="0 0 20 30" preserveAspectRatio="none">
+          <polygon
+              points="0,16 20,0 20,30"
+              fill="currentColor"
+          />
+      </svg>
+    </div>
+      <div class="hud-card-content-inner">
+          <!-- tudo aqui -->
+          <div class="title-dados">
+            <svg class="triangle" viewBox="0 0 20 16">
+              <polygon
+              points="0,0 20,0 10,16"
+              fill="currentColor"/>
+            </svg>
+                <span>FORMAÇÃO</span>
+          </div>
+          <div class="subtitle-dados">
+                <span>FORMACAO</span>
+          </div>
+          <div class="curriculo">
+            <div class="line1">
+              <div class="curso">
+                <span>ADMINISTRAÇÃO</span>
+              </div>
+              <div class="ano"><span>2015</span></div>
+            </div>
+    
+              <div class="line2">
+                <div class="instituicao"><span>Fac. Dom Bosco</span></div>
+              </div>
+              <div class="line"></div>
+              <div class="line1">
+              <div class="curso">
+                <span>MATEMÁTICA</span>
+              </div>
+              <div class="ano"><span>2025</span></div>
+            </div>
+    
+              <div class="line2">
+                <div class="instituicao"><span>Fac. Prisma</span></div>
+              </div>
+              <div class="line"></div>
+              <div class="line1">
+              <div class="curso">
+                <span>COMPUTAÇÃO</span>
+              </div>
+              <div class="ano"><span>2028</span></div>
+            </div>
+    
+              <div class="line2">
+                <div class="instituicao"><span>UEL</span></div>
+              </div>
+              <div class="line"></div>
+          </div>
+          <div class="graphic">
+    
+        <img src="assets/img/statics/Ativo 7.svg" alt="">
+      </div>
+          <div class="grid-container">
+            <div class="icon-item" data-name="HTML">
+                <img src="assets/icons/tools/html.png" class="icon-static" alt="Símbolo do HTML">
+                <img src="assets/icons/tools/hover/html.png" class="icon-hover" alt="Símbolo do HTML">
+            </div>
+            <div class="icon-item" data-name="CSS">
+                <img src="assets/icons/tools/css.png" class="icon-static" alt="Símbolo do HTML">
+                <img src="assets/icons/tools/hover/css.png" class="icon-hover" alt="Símbolo do HTML">
+            </div>
+            <div class="icon-item" data-name="JAVASCRIPT">
+                <img src="assets/icons/tools/js.png" class="icon-static" alt="Símbolo do Java Script">
+                <img src="assets/icons/tools/hover/js.png" class="icon-hover" alt="Símbolo do Java Script">
+            </div>
+            <div class="icon-item" data-name="GIT">
+                <img src="assets/icons/tools/git.png" class="icon-static" alt="Símbolo do Git">
+                <img src="assets/icons/tools/hover/git.png" class="icon-hover" alt="Símbolo do Git">
+            </div>
+            <div class="icon-item" data-name="GITHUB">
+                <img src="assets/icons/tools/github.png" class="icon-static" alt="Símbolo do Github">
+                <img src="assets/icons/tools/hover/github.png" class="icon-hover" alt="Símbolo do Github">
+            </div>
+            <div class="icon-item" data-name="FIGMA">
+                <img src="assets/icons/tools/figma.png" class="icon-static" alt="Símbolo do Figma">
+                <img src="assets/icons/tools/hover/figma.png" class="icon-hover" alt="Símbolo do Figma">
+            </div>
+            <div class="icon-item" data-name="ILLUSTRATOR">
+                <img src="assets/icons/tools/ai.png" class="icon-static" alt="Símbolo do Illustrator">
+                <img src="assets/icons/tools/hover/ai.png" class="icon-hover" alt="Símbolo do Illustrator">
+            </div>
+            <div class="icon-item" data-name="PHOTOSHOP">
+                <img src="assets/icons/tools/ps.png" class="icon-static" alt="Símbolo do Photoshop">
+                <img src="assets/icons/tools/hover/ps.png" class="icon-hover" alt="Símbolo do Photoshop">
+            </div>
+            <div class="icon-item" data-name="COREL">
+                <img src="assets/icons/tools/corel.png" class="icon-static" alt="Símbolo do Corel Draw">
+                <img src="assets/icons/tools/hover/corel.png" class="icon-hover" alt="Símbolo do Corel Draw">
+            </div>
+    
+          </div>
+           <!-- <div class="graphic">
+    
+        <img src="assets/img/statics/Ativo 7.svg" alt="">
+      </div> -->
+          <!-- <div class="apps">
+            <div class="static">
+              <img src="assets/icons/tools/html.png" alt="">
+              <img src="assets/icons/tools/css.png" alt="">
+              <img src="assets/icons/tools/js.png" alt="">
+              <img src="assets/icons/tools/git.png" alt="">
+              <img src="assets/icons/tools/github.png" alt="">
+              <img src="assets/icons/tools/figma.png" alt="">
+              <img src="assets/icons/tools/ai.png" alt="">
+              <img src="assets/icons/tools/ps.png" alt="">
+              <img src="assets/icons/tools/corel.png" alt="">
+            </div>
+            <div class="hover">
+              <img src="assets/icons/tools/hover/html.png" alt="">
+              <img src="assets/icons/tools/hover/css.png" alt="">
+              <img src="assets/icons/tools/hover/js.png" alt="">
+              <img src="assets/icons/tools/hover/git.png" alt="">
+              <img src="assets/icons/tools/hover/github.png" alt="">
+              <img src="assets/icons/tools/hover/figma.png" alt="">
+              <img src="assets/icons/tools/hover/ai.png" alt="">
+              <img src="assets/icons/tools/hover/ps.png" alt="">
+              <img src="assets/icons/tools/hover/corel.png" alt="">
+            </div>
+          </div> -->
+          
+    
+    
+    
+    
+    
+    <!-- 
+    <div class="curriculo">
+            <div class="line1">
+              <div class="curso">
+                <span>ADMINISTRAÇÃO</span>
+              </div>
+              <div class="ano"><span>2015</span></div>
+            </div>
+    
+              <div class="line2">
+                <div class="instituicao"><span>Fac. Dom Bosco</span></div>
+              </div>
+          </div>
+          <div class="line"></div> -->
+    
+      </div>
+    </div>
+    </section>
+    
+    <section id="projetos">
+    <div class="title projetos-title">
+            <h2>PRO<br>JE<br>TOS</h2>
+        </div>
+        <div class="project-card">
+      <!-- glow -->
+      <picture class="project-glow">
+        <source
+          media="(max-width: 768px)"
+          srcset="assets/img/projects/mobile/iazu-mob.webp"
+        >
+        <img
+          src="assets/img/projects/iazu-desk.webp"
+          alt=""
+        >
+      </picture>
+      <!-- imagem normal -->
+      <picture class="project-pics">
+        <source
+          media="(max-width: 768px)"
+          srcset="assets/img/projects/mobile/iazu-mob.webp"
+        >
+        <img
+          src="assets/img/projects/iazu-desk.webp"
+          alt="Landing page iazu handmade"
+        >
+      </picture>
+    </div>
+        <div class="subtitle-project">
+          <h2>
+            Landing page - iazu handmade
+          </h2>
+        </div>
+        <div class="line-gradient"></div>
+        /* ----------------- *	GABRIEL	* ----------------- */
+        <div class="project-card">
+      <!-- glow -->
+      <picture class="project-glow">
+        <source
+          media="(max-width: 768px)"
+          srcset="assets/img/projects/mobile/gabriel-mob.webp"
+        >
+        <img
+          src="assets/img/projects/gabriel-desk.webp"
+          alt=""
+        >
+      </picture>
+      <!-- imagem normal -->
+      <picture class="project-pics">
+        <source
+          media="(max-width: 768px)"
+          srcset="assets/img/projects/mobile/gabriel-mob.webp"
+        >
+        <img
+          src="assets/img/projects/gabriel-desk.webp"
+          alt="Landing page iazu handmade"
+        >
+      </picture>
+    </div>
+        <div class="subtitle-project">
+          <h2>
+            Landing page - Gabriel Odontologia
+          </h2>
+        </div>
+        <div class="line-gradient"></div>
+        
+    </section>
+  </div>
+
+
+
+
+
+
+  <section id="contact">
+
+  <div class="contact-divisor">
+    <img src="assets/img/contact/mobile/globe-grad.svg" alt="Logo da empresa fictícia retrotech representando um globo terrestre de linhas" class="globe">
+
+    <span class="retrotech">RETROTECH</span>
+
+    <span class="comunications">COMUNICATIONS™</span>
+
+    <div class="line-globe"></div>
+
+    <span class="bars">/ / / / /</span>
+  </div>
+
+  <div class="contact-scene">
+
+    <img src="assets/img/contact/mobile/droid.webp" alt="Android com terno roxo e gravata rosa segurando um telefone rosa antigo na orelha com a mão direita e apontando para o telefone com a mão esquerda" class="droid">
+
+    <div class="contact-overlay">
+
+      <img src="assets/img/contact/mobile/linha-direta.webp" alt="Neon Rosa escrito Linha Direta" class="linha-direta">
+
+
+
+      <div class="contact-container">
+        <div class="contact-text">
+          <div class="text1">
+            <p>
+              Sua ideia
+              <br>Meu código
+              <br><span class="projeto">Nosso projeto</span>
+            </p>
+          </div>
+          <div class="mini-line"></div>
+          <div class="text2">
+            <p>
+              Decodificando ideias e programando soluções desde o futuro.
+              Nossos droids estão aguardando sua transmissão.
+            </p>
+          </div>
+        </div>
+        
+        <div class="contact-links">
+          <svg
+            class="contact-frame"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 82.32 104.49"
+            preserveAspectRatio="none">
+            <path
+              d="M77.65,103.99H4.67l-4.17-4.17V4.67L4.67.5h72.97l4.17,4.17v95.15l-4.17,4.17Z"/>
+            </svg>
+
+          <div class="links-content">
+            <div class="icon">
+            <a href=" "><img src="assets/icons/wp-pink2.svg" alt="Logo do Whatsapp"> <div class="link-text"><strong>WHATSAPP</strong><span>(43) 98413-7674</span></div></a></div>
+
+          <div class="line-links"></div>
+
+            <div class="icon"><a href="https://www.linkedin.com/in/diego-uzai/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/in-pink2.svg" alt="Logo do Linkedin"><div class="link-text"><strong>LINKEDIN</strong><span>@diego-uzai</span></div></a></div>
+
+            <div class="line-links"></div>
+
+            <div class="icon"><a href="https://github.com/oblzzz" target="_blank" rel="noopener noreferrer"><img src="assets/icons/git-pink2.svg" alt="Link do Github"><div class="link-text"><strong>GITHUB</strong><span>@oblzzz</span></div></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="contact-cta">
+  <a href=""> <img src="assets/img/contact/cta-wp-off.webp" alt="Botão para entrar em contato via whatsapp">
+  
+  </a>
+</div>
+
+</section>
+
+
+
 </main>
+<script src="assets/js/main.js"></script>
+<footer>Diego Uzai</footer>
 </body>
 </html>

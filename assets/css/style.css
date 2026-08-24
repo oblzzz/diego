@@ -41,9 +41,12 @@ body{
 :root{
   --purple:#5900FF;
   --pink:#FD2C78;
+  --pink2: #f40990;
   --black:#000;
+  --gray: #1c1c1c;
   --white:#fff;
   --light: #FFBCD4; 
+  --light-purple: #a072ff;
   /* --hud-color: #5900ff; */
   --cut-x: 25px;
   --cut-y: 18px;
@@ -53,6 +56,8 @@ body{
   --title2: "Audiowide", sans-serif;
   --text: "Jura", sans-serif;
   --text2: "Oxanium", sans-serif;
+  --text3: "Bungee Inline", sans-serif;
+  --text-dot: "Bitcount Prop Double", system-ui, sans-serif;
   --text-size: clamp(1.3rem, 2vw, 1.5rem);
   --barcode-clear: "Libre Barcode 128", sans-serif;
   --barcode-text: "Libre Barcode 128 text", sans-serif;
@@ -83,22 +88,39 @@ body{
   font-style: normal;
 }
 
+.bungee-inline-regular {
+  font-family: "Bungee Inline", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.bitcount-prop-double{
+  font-family: "Bitcount Prop Double", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
 
 
 
 body{
   /* background:rgb(7, 0, 20); */
-  background: black;
+  background: var(--black);
   width:100%;
   /* position: relative; */
   /* overflow-x:hidden; */
-  font-family:var(--font1);
+  font-family: var(--font1);
   min-height: 100vh;
 }
 
-main{
+.main-container{
   padding: 0 2rem;
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
 }
 
 
@@ -125,7 +147,7 @@ HEADER
 
 header{
   position:relative;
-  background:black;
+  background: var(--black);
 }
 
 .sr-only {
@@ -280,6 +302,11 @@ MENU BUTTON
 /* =========================================================
 VIDEO
 ========================================================= */
+/* * {
+    outline: 1px solid red !important;
+    border: 1px solid rgb(0, 234, 255) !important;
+} */
+ /* MARGENS DE CONTROLE */
 
 .video-section{
   width:100%;
@@ -292,10 +319,7 @@ VIDEO
   display:block;
 }
 
-.name-video{
-  width:100%;
-  display:block;
-}
+
 
 /* =========================================================
 OVERLAY
@@ -539,8 +563,8 @@ EFEITO CHOQUE
     electricText .08s infinite alternate;
 }
 
-.nome{
-  /* background-color: var(--pink); */
+/* .nome{
+  background-color: var(--pink);
   display: flex;
   margin: auto;
   padding: 7rem 0;
@@ -548,6 +572,21 @@ EFEITO CHOQUE
   filter: drop-shadow(0 0 5px #660bf9c2) 
           drop-shadow(0 0 15px #672cfda4) 
           drop-shadow(0 0 50px #6b2cfda4);
+} */
+
+
+.name-container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  width: 90vw;
+}
+
+.name-video{
+  width:100%;
+  display:block;
 }
 
 /* ----------------- *	CTA PROJETOS	* ----------------- */ 
@@ -643,43 +682,33 @@ NAV DESKTOP
   display:none;
 }
 
-.name-container{
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  margin-top: 7rem;
-  margin-bottom: 7rem;
-  width: 90vw;
-}
-
-
-.moon img{
+/* .moon img{
   margin: auto;
   width:100%;
   display:block;
   transform:
     scale(1.1)
 
-    /* translateX(-8%); */
-}
+    translateX(-8%);
+} */
 
- .name img{
+ /* .name img{
   margin: auto;
-  /* margin-bottom: 10rem;x */
+  margin-bottom: 10rem;x
   width: 95%;
   display:block;
   transform:
-    /* scale(1.5) */
-    /* translateX(-.7%) */
+    scale(1.5)
+    translateX(-.7%)
     translateY(10%);
-/* filter:
+filter:
         drop-shadow(0 0 4px var(--pink))
         drop-shadow(0 0 12px var(--pink))
-        drop-shadow(0 0 20px var(--pink)); */
-  /* transform:
+        drop-shadow(0 0 20px var(--pink));
+  transform:
     scale(1.1)
-    translateX(-2%); */
-}
+    translateX(-2%);
+} */
 
 /* ============================================================ 
  * SESSAO PROFILE MOBILE
@@ -723,13 +752,13 @@ NAV DESKTOP
 .tagline p{
   padding-bottom: 4rem;
   font-size: var(--text-size);
-  font-weight: 700;
+  font-weight: 900;
   font-family: var(--text);
-  color: var(--light);
-  /* color: var(--purple); */
+  /* color: var(--light); */
+  color: var(--light-purple);
   line-height: 1.6;
-  text-shadow: 0 0 10px rgb(235, 109, 220), 
-  0 0 15px rgb(235, 109, 220);
+  /* text-shadow: 0 0 10px rgb(235, 109, 220), 
+  0 0 15px rgb(235, 109, 220); */
   /* letter-spacing: 0.05em; */
     z-index: 2;
 }
@@ -826,7 +855,7 @@ NAV DESKTOP
 .bio{
   grid-area: bio;
   align-self: center;
-  padding-top: 12rem;
+  padding-top: 10rem;
   /* padding-left: 4rem; */
 }
 
@@ -838,11 +867,13 @@ NAV DESKTOP
   font-family: var(--text);
   /* text-indent: 3rem; */
   /* color: var(--purple); */
-   color:var(--light);
+  color:var(--light);
+  color: var(--light-purple);
+
   /* color: var(--purple); */
   line-height: 1.6;
-  text-shadow: 0 0 10px rgb(235, 109, 220), 
-  0 0 15px rgb(235, 109, 220);
+  /* text-shadow: 0 0 10px rgb(235, 109, 220), 
+  0 0 15px rgb(235, 109, 220); */
   /* line-height: 1.5; */
   /* letter-spacing: 0.05em; */
   text-align: left;
@@ -1047,7 +1078,7 @@ NAV DESKTOP
 .hud-card-content::after {
     content: "";
     position: absolute;
-    inset: 2px;
+    inset: 1px;
     background: var(--black);
     clip-path: polygon(
         0 0,
@@ -1384,9 +1415,9 @@ NAV DESKTOP
   object-fit:cover;
   transform:scale(1.05);
   filter:
-    blur(12px)
+    blur(20px)
     saturate(190%)
-    brightness(1.5);
+    brightness(2.5);
   opacity:.5;
   mix-blend-mode:screen;
 }
@@ -1401,16 +1432,18 @@ NAV DESKTOP
   color: var(--purple);
 }
 
+
 .line-gradient{
   position:relative;
-  width:100%;
-  height:3px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height:0.05rem;
   isolation:isolate;
   overflow:visible;
   margin-top: 4rem;
   margin-bottom: 4rem;
   border: none;
-  background: linear-gradient(to right, var(--pink), var(--purple), var(--purple), var(--pink));
+  background: linear-gradient(to right, var(--black), var(--pink), var(--purple),  var(--purple), var(--pink), var(--black));
 }
 
 
@@ -1422,10 +1455,378 @@ NAV DESKTOP
   right:-6px;
   bottom:-3px;
   background:inherit;
-  filter:blur(18px);
-  /* opacity:100; */
+  filter:blur(10px)
+  opacity(60%);
+  /* opacity:1; */
   z-index:-1;
 }
+
+
+
+
+
+/* ----------------- *	Contato	* ----------------- */ 
+
+#contact{
+  width: 100%;
+  position: relative;
+  /* border: 2px solid rgb(174, 255, 162); */
+
+  /* border: 2px solid pink; */
+}
+
+.contact-divisor{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0 1rem;
+  color: var(--purple);
+  font-family: var(--text3);
+  font-size: .6rem;
+}
+
+.contact-divisor .globe{
+  width: 20px;
+}
+
+.contact-divisor .retrotech{
+  letter-spacing: 1px;
+  margin-left: .4rem;
+  flex-shrink: 0;
+}
+
+.contact-divisor .comunications{
+  font-family: var(--text2);
+  margin: 0 .3rem 0 .2rem;
+  flex-shrink: 0;
+}
+
+
+
+.contact-divisor .line-globe{
+  /* border: 2px solid red; */
+  width:100%;
+  height:.02rem;
+  background: var(--pink2);
+}
+
+.contact-divisor .bars{
+  flex-shrink: 0;
+  margin-left: .3rem;
+  /* margin-right: .1rem; */
+  color: var(--pink2);
+}
+
+
+.contact-scene{
+    /* border: 2px solid greenyellow; */
+    position:relative;
+    width:100%;
+    margin-top: 5rem;
+}
+
+.contact-overlay{
+  position:absolute;
+  inset:0;
+  /* z-index: 2; */
+}
+
+.droid{
+  display: block;
+  /* border: 2px solid rgb(29, 86, 201); */
+  /* left: 10%; */
+  position:relative;
+  width:100%;
+  z-index: 0;
+  /* opacity: 25%; */
+}
+
+.linha-direta{
+  position:absolute;
+  top:-17%;
+  left:0;
+  width:70%;
+  /* height: 40%; */
+  /* border: 2px solid blueviolet; */
+}
+
+
+.contact-container{
+  position:absolute;
+  top:32%;
+  /* border: 1px solid #ec1e25; */
+
+  left:1.5rem;
+  width:34%;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+
+.contact-text{
+  /* position: absolute; */
+  font-size: .9rem;
+  color: var(--light-purple);
+  /* border: 2px solid forestgreen; */
+  /* top:42%; */
+  left: 1rem;
+  width:100%;
+}
+
+.contact-text .text1{
+  font-family: var(--text2);
+}
+
+.text1 span{
+  color: var(--pink2);
+}
+
+.contact-text .mini-line{
+  width: 25%;
+
+   /* width: 80%;
+  height:.07rem;
+  background-image: linear-gradient(to right, var(--pink2), var(--black)); */
+
+  height:.07rem;
+  background: var(--pink2);
+  margin: 1rem 0;
+}
+
+.contact-text .text2{
+  font-size: .7rem;
+  font-family: var(--text);
+}
+
+
+
+
+.contact-links{
+  /* border: 1px solid mediumturquoise; */
+  /* position:absolute; */
+  /* margin-top: .5rem; */
+  position:relative;
+  /* padding:1rem; */
+  width:fit-content;
+  height:auto;
+  align-self:flex-start;
+  /* left: 1rem; */
+  /* bottom: 1rem; */
+}
+
+.contact-frame{
+  /* border: 1px solid #a072ff; */
+  position:absolute;
+  /* margin-top: .5rem; */
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+
+
+.contact-frame path{
+  fill:none;
+  stroke:var(--pink2);
+  stroke-width: .5px;
+}
+
+.links-content{
+  /* border: 1px solid yellow; */
+  position:relative;
+  z-index:2;
+  padding: .8rem .8rem;
+}
+
+.link-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.link-text strong{
+  font-family: var(--text-dot);
+  font-weight: 400;
+  line-height:1;
+}
+
+.link-text span{
+  font-family: var(--text2);
+  color: var(--light-purple);
+  line-height:1;
+  font-size:.6rem;
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+.contact-links .icon img{
+  height: 1rem;
+  align-self: flex-start;
+  /* left: 2rem; */
+  /* bottom: 10%; */
+}
+
+.contact-links a{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  text-decoration: none;
+  color: var(--pink2);
+}
+
+.links-content .line-links{
+  height:.03rem;
+  background: var(--pink2);
+  margin: 1rem 0;
+}
+
+
+
+
+
+
+
+
+/* ----------------- *	CTA	* ----------------- */ 
+ .contact-cta{
+  width:85%;
+  margin: 3rem auto 2rem;
+}
+
+.contact-cta img{
+  display:block;
+  width:100%;
+}
+
+
+
+
+
+
+/* ============= *	RETROTECH	* ============= */ 
+
+.retrotech-container{
+  /* position: relative; */
+  margin: auto;
+  width: 90%;
+  height: fit-content; /* ESSENCIAL */
+  padding: .5rem;
+  display: grid;
+  border: .1px solid var(--pink2);
+}
+
+.retrotech-content .bar{
+  background-color: var(--pink2);
+  width: .5px;
+  height: 70%;
+  margin: 0 .5rem;
+}
+
+/* conteúdo também no grid, mas ocupando o mesmo espaço */
+.retrotech-content{
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: center;
+  padding: .1rem;
+  font-family: var(--text2);
+  color: var(--purple);
+  font-size: .6rem;
+}
+
+
+.retrotech-cell{
+  align-items: center;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-shrink: 1;
+  height: fit-content;
+}
+
+.retrotech-cell .disponivel{
+  text-align: right;
+}
+
+.retrotech-cell img{
+  height: 1rem;
+  width: auto;
+  margin-right: .5rem;
+}
+
+.retrotech-content .dot{
+  background-color: rgb(137, 241, 142);
+  margin: .3rem;
+  width: .3rem;
+  height: .3rem;
+  border-radius: 50%;
+  filter:
+  drop-shadow(0 0 2px rgb(0, 255, 17))
+  drop-shadow(0 0 3px rgb(0, 255, 17));
+}
+
+.retrotech-cell .barcode{
+  transform: translateY(4px);
+  flex-shrink: 0;
+  font-family: var(--barcode-clear);
+  font-size: 1rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+
+.line-gradient2{
+  position:relative;
+  width:100%;
+  height:0.05rem;
+  isolation:isolate;
+  overflow:visible;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border: none;
+  background: linear-gradient(to right, var(--black), var(--pink), var(--purple),  var(--purple), var(--pink), var(--black));
+}
+
+
+.line-gradient2::before{
+  content:"";
+  position:absolute;
+  top:-3px;
+  left:-6px;
+  right:-6px;
+  bottom:-3px;
+  background:inherit;
+  filter:blur(10px)
+  opacity(60%);
+  /* opacity:1; */
+  z-index:-1;
+}
+
+.contact-icons{
+  margin: auto;
+  /* border: 2px solid red; */
+  max-width: 21rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 footer{
   text-align: center;
@@ -1437,7 +1838,6 @@ footer{
   /* letter-spacing:.5rem; */
   font-family: var(--barcode-text);
 }
-
 
 
 
@@ -1748,17 +2148,7 @@ CHOQUE DESKTOP
   vertical-align: middle;
   animation: blink-cursor 1s steps(1) infinite;
 }
-
-
-
-
-
-
-
-
 }
-
-
 
 /* =========================================================
 ANIMAÇÕES
