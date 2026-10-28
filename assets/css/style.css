@@ -45,7 +45,7 @@ body{
   --black:#000;
   --gray: #1c1c1c;
   --white:#fff;
-  --light: #FFBCD4; 
+  --light: #FFBCD4;
   --light-purple: #a072ff;
   /* --hud-color: #5900ff; */
   --cut-x: 25px;
@@ -1398,7 +1398,13 @@ filter:
   z-index:2;
   display:block;
   width:100%;
+  transition: .3s;
   /* border-radius:2px; */
+}
+
+.project-pics img:hover{
+    filter:
+  drop-shadow(0 0 10px rgba(15, 219, 255, 0.294))
 }
 
 /* glow */
@@ -1422,6 +1428,7 @@ filter:
   mix-blend-mode:screen;
 }
 
+
 .subtitle-project>h2{
   padding-top: 2.5rem;
   flex-shrink: 0;
@@ -1430,6 +1437,21 @@ filter:
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--purple);
+}
+
+.subtitle-project>h2>a{
+  text-decoration: none;
+  color: var(--purple);
+  transition: .15s;
+}
+
+.subtitle-project>h2>a:hover{
+  color: var(--light);
+  filter:
+  /* drop-shadow(0 0 10px rgb(115, 0, 255)) */
+  drop-shadow(0 0 5px rgba(253, 44, 121, 0.746))
+  drop-shadow(0 0 5px rgba(253, 44, 121, 0.622))
+  drop-shadow(0 0 15px rgba(253, 44, 121, 0.513));
 }
 
 
@@ -1480,7 +1502,7 @@ filter:
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  margin: 0 1rem;
+  margin: 0 1rem 6.5rem 1rem;
   color: var(--purple);
   font-family: var(--text3);
   font-size: .6rem;
@@ -1646,6 +1668,7 @@ filter:
 }
 
 .link-text strong{
+  /* border: 1px solid #ec1e25; */
   font-family: var(--text-dot);
   font-weight: 400;
   line-height:1;
@@ -1661,10 +1684,19 @@ filter:
 }
 
 .contact-links .icon img{
+  /* border: 1px solid #ec1e25; */
   height: 1rem;
   align-self: flex-start;
   /* left: 2rem; */
   /* bottom: 10%; */
+}
+
+.icon:hover{
+  /* border: 1px solid #5fd2ff; */
+  filter:
+    drop-shadow(0 0 5px rgba(253, 44, 121, 0.746))
+  drop-shadow(0 0 5px rgba(253, 44, 121, 0.622))
+  drop-shadow(0 0 15px rgba(253, 44, 121, 0.513));
 }
 
 .contact-links a{
@@ -1809,8 +1841,17 @@ filter:
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  transition: 0.15s;
 }
 
+.contact-icons>a:hover{
+    filter:
+  /* drop-shadow(0 0 10px rgb(115, 0, 255)) */
+  drop-shadow(0 0 5px rgba(253, 44, 121, 0.746))
+  drop-shadow(0 0 5px rgba(253, 44, 121, 0.622))
+  drop-shadow(0 0 15px rgba(253, 44, 121, 0.513));
+  
+}
 
 
 
