@@ -367,235 +367,201 @@ MAIN
     
     
     
-    <section class="hud-panel">
-      <div class="hud-card-title">
-          <span>[EXTRAIR DADOS]</span>
-              <img class="eject"  src="assets/icons/eject.svg" alt="Simbolo de ejetar">
-      </div>
-      <div class="hud-card-content">
-      <div class="hud-indicator">
+    <!-- =========================================================
+HUD PANEL (FORMAÇÃO E TECNOLOGIAS)
+========================================================= -->
+<section class="hud-panel closed">
+  <!-- Título do Accordion que aciona o clique -->
+  <div class="hud-card-title" role="button" tabindex="0" aria-expanded="false" aria-controls="hud-content">
+    <span>HABILIDADES - [EXTRAIR DADOS]</span>
+    <img class="eject" src="assets/icons/eject.svg" alt="Símbolo de ejetar">
+  </div>
+
+  <!-- Conteúdo expansível -->
+  <div id="hud-content" class="hud-card-content">
+    <div class="hud-indicator">
       <svg viewBox="0 0 20 30" preserveAspectRatio="none">
-          <polygon
-              points="0,16 20,0 20,30"
-              fill="currentColor"
-          />
+        <polygon points="0,16 20,0 20,30" fill="currentColor"/>
       </svg>
     </div>
-      <div class="hud-card-content-inner">
-          <!-- tudo aqui -->
-          <div class="title-dados">
-            <svg class="triangle" viewBox="0 0 20 16">
-              <polygon
-              points="0,0 20,0 10,16"
-              fill="currentColor"/>
-            </svg>
-                <span>FORMAÇÃO</span>
-          </div>
-          <div class="subtitle-dados">
-                <span>FORMACAO</span>
-          </div>
-          <div class="curriculo">
-            <div class="line1">
-              <div class="curso">
-                <span>ADMINISTRAÇÃO</span>
-              </div>
-              <div class="ano"><span>2015</span></div>
-            </div>
-    
-              <div class="line2">
-                <div class="instituicao"><span>Fac. Dom Bosco</span></div>
-              </div>
-              <div class="line"></div>
-              <div class="line1">
-              <div class="curso">
-                <span>MATEMÁTICA</span>
-              </div>
-              <div class="ano"><span>2025</span></div>
-            </div>
-    
-              <div class="line2">
-                <div class="instituicao"><span>Fac. Prisma</span></div>
-              </div>
-              <div class="line"></div>
-              <div class="line1">
-              <div class="curso">
-                <span>COMPUTAÇÃO</span>
-              </div>
-              <div class="ano"><span>2028</span></div>
-            </div>
-    
-              <div class="line2">
-                <div class="instituicao"><span>UEL</span></div>
-              </div>
-              <div class="line"></div>
-          </div>
-          <div class="graphic">
-    
+
+    <div class="hud-card-content-inner">
+      <!-- Títulos internos -->
+      <div class="title-dados">
+        <svg class="triangle" viewBox="0 0 20 16">
+          <polygon points="0,0 20,0 10,16" fill="currentColor"/>
+        </svg>
+        <span>FORMAÇÃO</span>
+      </div>
+
+      <div class="subtitle-dados">
+        <span>FORMACAO</span>
+      </div>
+
+      <!-- Formação Acadêmica -->
+      <div class="curriculo">
+        <div class="line1">
+          <div class="curso"><span>ADMINISTRAÇÃO</span></div>
+          <div class="ano"><span>2015</span></div>
+        </div>
+        <div class="line2">
+          <div class="instituicao"><span>Fac. Dom Bosco</span></div>
+        </div>
+        <div class="line"></div>
+
+        <div class="line1">
+          <div class="curso"><span>MATEMÁTICA</span></div>
+          <div class="ano"><span>2025</span></div>
+        </div>
+        <div class="line2">
+          <div class="instituicao"><span>Fac. Prisma</span></div>
+        </div>
+        <div class="line"></div>
+
+        <div class="line1">
+          <div class="curso"><span>COMPUTAÇÃO</span></div>
+          <div class="ano"><span>2028</span></div>
+        </div>
+        <div class="line2">
+          <div class="instituicao"><span>UEL</span></div>
+        </div>
+        <div class="line"></div>
+      </div>
+
+      <div class="graphic">
         <img src="assets/img/statics/Ativo 7.svg" alt="">
       </div>
-          <div class="grid-container">
-            <div class="icon-item" data-name="HTML">
-                <img src="assets/icons/tools/html.png" class="icon-static" alt="Símbolo do HTML">
-                <img src="assets/icons/tools/hover/html.png" class="icon-hover" alt="Símbolo do HTML">
-            </div>
-            <div class="icon-item" data-name="CSS">
-                <img src="assets/icons/tools/css.png" class="icon-static" alt="Símbolo do HTML">
-                <img src="assets/icons/tools/hover/css.png" class="icon-hover" alt="Símbolo do HTML">
-            </div>
-            <div class="icon-item" data-name="JAVASCRIPT">
-                <img src="assets/icons/tools/js.png" class="icon-static" alt="Símbolo do Java Script">
-                <img src="assets/icons/tools/hover/js.png" class="icon-hover" alt="Símbolo do Java Script">
-            </div>
-            <div class="icon-item" data-name="GIT">
-                <img src="assets/icons/tools/git.png" class="icon-static" alt="Símbolo do Git">
-                <img src="assets/icons/tools/hover/git.png" class="icon-hover" alt="Símbolo do Git">
-            </div>
-            <div class="icon-item" data-name="GITHUB">
-                <img src="assets/icons/tools/github.png" class="icon-static" alt="Símbolo do Github">
-                <img src="assets/icons/tools/hover/github.png" class="icon-hover" alt="Símbolo do Github">
-            </div>
-            <div class="icon-item" data-name="FIGMA">
-                <img src="assets/icons/tools/figma.png" class="icon-static" alt="Símbolo do Figma">
-                <img src="assets/icons/tools/hover/figma.png" class="icon-hover" alt="Símbolo do Figma">
-            </div>
-            <div class="icon-item" data-name="ILLUSTRATOR">
-                <img src="assets/icons/tools/ai.png" class="icon-static" alt="Símbolo do Illustrator">
-                <img src="assets/icons/tools/hover/ai.png" class="icon-hover" alt="Símbolo do Illustrator">
-            </div>
-            <div class="icon-item" data-name="PHOTOSHOP">
-                <img src="assets/icons/tools/ps.png" class="icon-static" alt="Símbolo do Photoshop">
-                <img src="assets/icons/tools/hover/ps.png" class="icon-hover" alt="Símbolo do Photoshop">
-            </div>
-            <div class="icon-item" data-name="COREL">
-                <img src="assets/icons/tools/corel.png" class="icon-static" alt="Símbolo do Corel Draw">
-                <img src="assets/icons/tools/hover/corel.png" class="icon-hover" alt="Símbolo do Corel Draw">
-            </div>
-    
-          </div>
-          <!-- <div class="graphic">
-    
-        <img src="assets/img/statics/Ativo 7.svg" alt="">
-      </div> -->
-          <!-- <div class="apps">
-            <div class="static">
-              <img src="assets/icons/tools/html.png" alt="">
-              <img src="assets/icons/tools/css.png" alt="">
-              <img src="assets/icons/tools/js.png" alt="">
-              <img src="assets/icons/tools/git.png" alt="">
-              <img src="assets/icons/tools/github.png" alt="">
-              <img src="assets/icons/tools/figma.png" alt="">
-              <img src="assets/icons/tools/ai.png" alt="">
-              <img src="assets/icons/tools/ps.png" alt="">
-              <img src="assets/icons/tools/corel.png" alt="">
-            </div>
-            <div class="hover">
-              <img src="assets/icons/tools/hover/html.png" alt="">
-              <img src="assets/icons/tools/hover/css.png" alt="">
-              <img src="assets/icons/tools/hover/js.png" alt="">
-              <img src="assets/icons/tools/hover/git.png" alt="">
-              <img src="assets/icons/tools/hover/github.png" alt="">
-              <img src="assets/icons/tools/hover/figma.png" alt="">
-              <img src="assets/icons/tools/hover/ai.png" alt="">
-              <img src="assets/icons/tools/hover/ps.png" alt="">
-              <img src="assets/icons/tools/hover/corel.png" alt="">
-            </div>
-          </div> -->
-          
-    
-    
-    
-    
-    
-    <!-- 
-    <div class="curriculo">
-            <div class="line1">
-              <div class="curso">
-                <span>ADMINISTRAÇÃO</span>
-              </div>
-              <div class="ano"><span>2015</span></div>
-            </div>
-    
-              <div class="line2">
-                <div class="instituicao"><span>Fac. Dom Bosco</span></div>
-              </div>
-          </div>
-          <div class="line"></div> -->
-    
+
+      <!-- Ícones das Ferramentas -->
+      <div class="grid-container">
+        <div class="icon-item" data-name="HTML">
+          <img src="assets/icons/tools/html.png" class="icon-static" alt="Símbolo do HTML">
+          <img src="assets/icons/tools/hover/html.png" class="icon-hover" alt="Símbolo do HTML">
+        </div>
+        <div class="icon-item" data-name="CSS">
+          <img src="assets/icons/tools/css.png" class="icon-static" alt="Símbolo do CSS">
+          <img src="assets/icons/tools/hover/css.png" class="icon-hover" alt="Símbolo do CSS">
+        </div>
+        <div class="icon-item" data-name="JAVASCRIPT">
+          <img src="assets/icons/tools/js.png" class="icon-static" alt="Símbolo do JavaScript">
+          <img src="assets/icons/tools/hover/js.png" class="icon-hover" alt="Símbolo do JavaScript">
+        </div>
+        <div class="icon-item" data-name="GIT">
+          <img src="assets/icons/tools/git.png" class="icon-static" alt="Símbolo do Git">
+          <img src="assets/icons/tools/hover/git.png" class="icon-hover" alt="Símbolo do Git">
+        </div>
+        <div class="icon-item" data-name="GITHUB">
+          <img src="assets/icons/tools/github.png" class="icon-static" alt="Símbolo do Github">
+          <img src="assets/icons/tools/hover/github.png" class="icon-hover" alt="Símbolo do Github">
+        </div>
+        <div class="icon-item" data-name="FIGMA">
+          <img src="assets/icons/tools/figma.png" class="icon-static" alt="Símbolo do Figma">
+          <img src="assets/icons/tools/hover/figma.png" class="icon-hover" alt="Símbolo do Figma">
+        </div>
+        <div class="icon-item" data-name="ILLUSTRATOR">
+          <img src="assets/icons/tools/ai.png" class="icon-static" alt="Símbolo do Illustrator">
+          <img src="assets/icons/tools/hover/ai.png" class="icon-hover" alt="Símbolo do Illustrator">
+        </div>
+        <div class="icon-item" data-name="PHOTOSHOP">
+          <img src="assets/icons/tools/ps.png" class="icon-static" alt="Símbolo do Photoshop">
+          <img src="assets/icons/tools/hover/ps.png" class="icon-hover" alt="Símbolo do Photoshop">
+        </div>
+        <div class="icon-item" data-name="COREL">
+          <img src="assets/icons/tools/corel.png" class="icon-static" alt="Símbolo do Corel Draw">
+          <img src="assets/icons/tools/hover/corel.png" class="icon-hover" alt="Símbolo do Corel Draw">
+        </div>
       </div>
+
     </div>
-    </section>
+  </div>
+</section>
     
     <section id="projetos">
-    <div class="title projetos-title">
-            <h2>PRO<br>JE<br>TOS</h2>
+  <div class="title projetos-title">
+    <h2>PRO<br>JE<br>TOS</h2>
+  </div>
+
+  <div class="projects-list">
+
+    <!-- PROJETO 1: IAZU -->
+    <div class="project-wrapper" data-image="assets/img/projects/iazu-desk.webp">
+      
+      <!-- CARD MOBILE (Mantém o visual mobile intacto) -->
+      <div class="project-card project-card-mobile">
+        <picture class="project-glow">
+          <source media="(max-width: 768px)" srcset="assets/img/projects/mobile/iazu-mob.webp">
+          <img src="assets/img/projects/iazu-desk.webp" alt="">
+        </picture>
+        <picture class="project-pics">
+          <source media="(max-width: 768px)" srcset="assets/img/projects/mobile/iazu-mob.webp">
+          <a href="https://oblzzz.github.io/iazu/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/img/projects/iazu-desk.webp" alt="Landing page iazu handmade">
+          </a>
+        </picture>
+      </div>
+
+      <!-- LINHA TEXTUAL DESKTOP (Aparece apenas no Desktop) -->
+      <a href="https://oblzzz.github.io/iazu/" target="_blank" rel="noopener noreferrer" class="project-desktop-link">
+        <div class="project-item-content">
+          <span class="project-number">01</span>
+          <h3 class="project-title">iazu handmade</h3>
         </div>
-        <div class="project-card">
-      <!-- glow -->
-      <picture class="project-glow">
-        <source
-          media="(max-width: 768px)"
-          srcset="assets/img/projects/mobile/iazu-mob.webp"
-        >
-        <img
-          src="assets/img/projects/iazu-desk.webp"
-          alt=""
-        >
-      </picture>
-      <!-- imagem normal -->
-      <picture class="project-pics">
-        <source
-          media="(max-width: 768px)"
-          srcset="assets/img/projects/mobile/iazu-mob.webp"
-        >
-        <a href="https://oblzzz.github.io/iazu/" target="_blank" rel="noopener noreferrer">
-          <img
-            src="assets/img/projects/iazu-desk.webp"
-            alt="Landing page iazu handmade"
-          >
-        </a>
-      </picture>
+        <span class="project-category">LANDING PAGE</span>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <div class="subtitle-project subtitle-mobile-only">
+        <h2>
+          <a href="https://oblzzz.github.io/iazu/" target="_blank" rel="noopener noreferrer">Landing page - iazu handmade</a>
+        </h2>
+      </div>
+
     </div>
-        <div class="subtitle-project">
-          <h2>
-            <a href="https://oblzzz.github.io/iazu/" target="_blank" rel="noopener noreferrer">Landing page - iazu handmade</a>
-          </h2>
+
+    <div class="line-gradient"></div>
+
+    <!-- PROJETO 2: GABRIEL -->
+    <div class="project-wrapper" data-image="assets/img/projects/gabriel-desk.webp">
+      
+      <!-- CARD MOBILE (Mantém o visual mobile intacto) -->
+      <div class="project-card project-card-mobile">
+        <picture class="project-glow">
+          <source media="(max-width: 768px)" srcset="assets/img/projects/mobile/gabriel-mob.webp">
+          <img src="assets/img/projects/gabriel-desk.webp" alt="">
+        </picture>
+        <picture class="project-pics">
+          <source media="(max-width: 768px)" srcset="assets/img/projects/mobile/gabriel-mob.webp">
+          <a href="https://oblzzz.github.io/gabriel-uzai-odontologia/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/img/projects/gabriel-desk.webp" alt="Landing page Gabriel Odontologia">
+          </a>
+        </picture>
+      </div>
+
+      <!-- LINHA TEXTUAL DESKTOP (Aparece apenas no Desktop) -->
+      <a href="https://oblzzz.github.io/gabriel-uzai-odontologia/" target="_blank" rel="noopener noreferrer" class="project-desktop-link">
+        <div class="project-item-content">
+          <span class="project-number">02</span>
+          <h3 class="project-title">Gabriel Odontologia</h3>
         </div>
-        <div class="line-gradient"></div>
-        /* ----------------- *	GABRIEL	* ----------------- */
-        <div class="project-card">
-      <!-- glow -->
-      <picture class="project-glow">
-        <source
-          media="(max-width: 768px)"
-          srcset="assets/img/projects/mobile/gabriel-mob.webp"
-        >
-        <img
-          src="assets/img/projects/gabriel-desk.webp"
-          alt=""
-        >
-      </picture>
-      <!-- imagem normal -->
-      <picture class="project-pics">
-        <source
-          media="(max-width: 768px)"
-          srcset="assets/img/projects/mobile/gabriel-mob.webp"
-        >
-        <a href="https://oblzzz.github.io/gabriel-uzai-odontologia/" target="_blank" rel="noopener noreferrer">
-          <img
-            src="assets/img/projects/gabriel-desk.webp"
-            alt="Landing page iazu handmade"
-          >
-        </a>
-      </picture>
+        <span class="project-category">LANDING PAGE</span>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <div class="subtitle-project subtitle-mobile-only">
+        <h2>
+          <a href="https://oblzzz.github.io/gabriel-uzai-odontologia/" target="_blank" rel="noopener noreferrer">Landing page - Gabriel Odontologia</a>
+        </h2>
+      </div>
+
     </div>
-        <div class="subtitle-project">
-          <h2>
-            <a href="https://oblzzz.github.io/gabriel-uzai-odontologia/" target="_blank" rel="noopener noreferrer">Landing page - Gabriel Odontologia</a>
-          </h2>
-        </div>
-        <!-- <div class="line-gradient"></div> -->
-        
-    </section>
+
+  </div>
+
+  <!-- MINIATURA FLUTUANTE DO DESKTOP -->
+  <div id="project-hover-preview" class="project-hover-preview">
+    <img id="project-hover-img" src="" alt="Preview do Projeto">
+  </div>
+</section>
   </div>
 
 
@@ -621,7 +587,20 @@ MAIN
 
   <div class="contact-scene">
 
-    <img src="assets/img/contact/mobile/droid.webp" alt="Android com terno roxo e gravata rosa segurando um telefone rosa antigo na orelha com a mão direita e apontando para o telefone com a mão esquerda" class="droid">
+        <picture>
+        <!-- Mobile -->
+        <source
+            media="(max-width: 768px)"
+            srcset="assets/img/contact/mobile/droid.webp"
+        >
+
+        <!-- Desktop (padrão) -->
+        <img
+            src="assets/img/contact/droid-desk.webp"
+            alt="Android com terno roxo e gravata rosa segurando um telefone rosa antigo na orelha direita e apontando para ele com a mão esquerda"
+            class="droid"
+        >
+    </picture>
 
     <div class="contact-overlay">
 

@@ -46,7 +46,7 @@ body{
   --gray: #1c1c1c;
   --white:#fff;
   --light: #FFBCD4;
-  --light-purple: #a072ff;
+  --light-purple: #5951cb;
   /* --hud-color: #5900ff; */
   --cut-x: 25px;
   --cut-y: 18px;
@@ -1026,103 +1026,150 @@ filter:
 
 
 
+/* =========================================================
+HUD PANEL ACCORDION & ANIMAÇÕES
+========================================================= */
+
+.hud-panel {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  transition: margin-bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Título acionável */
 .hud-card-title {
-    margin-top: 3rem;
-    position: relative;
-    width: 100%;
-    min-height: 66px;
-    padding: 1rem 1.5rem;
-    background: var(--purple);
-    font-family: var(--title2);
-    font-size: 1.3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    clip-path: polygon(
-        var(--cut-x) 0,
-        100% 0,
-        100% calc(100% - var(--cut-y)),
-        calc(100% - var(--cut-x)) 100%,
-        0 100%,
-        0 var(--cut-y)
-    );
+  position: relative;
+  width: 100%;
+  min-height: 66px;
+  padding: 1rem 1.5rem;
+  background: var(--purple);
+  font-family: var(--title2);
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  clip-path: polygon(
+      var(--cut-x) 0,
+      100% 0,
+      100% calc(100% - var(--cut-y)),
+      calc(100% - var(--cut-x)) 100%,
+      0 100%,
+      0 var(--cut-y)
+  );
+  transition: background-color 0.3s ease;
 }
 
-.eject{
+.hud-card-title:hover {
+  background-color: var(--pink);
+  transition: background-color 0.3s ease;
+
+}
+
+.eject {
   height: 1.3rem;
+  transition: transform 0.4s ease;
 }
 
+/* Rotação da fita/eject ao abrir */
+.hud-panel.open .eject {
+  transform: rotate(180deg);
+}
+
+.hud-panel.closed .eject {
+  transform: rotate(0deg);
+}
+
+/* Container que executa o deslize fluído da altura (Grid 0fr -> 1fr) */
 .hud-card-content {
-    position: relative;
-    margin-top: .8rem;
-    /* min-height: 500px; */
-    padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-rows: 0fr;
+  position: relative;
+  margin-top: 0.8rem;
+  padding: 0 1.5rem;
+  opacity: 0;
+  transition: 
+    grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s ease;
 }
 
+/* Borda Cyberpunk (Pseudo-elementos) */
 .hud-card-content::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--purple);
-    clip-path: polygon(
-        0 0,
-        calc(100% - var(--cut-x)) 0,
-        100% var(--cut-y),
-        100% 100%,
-        var(--cut-x) 100%,
-        0 calc(100% - var(--cut-y))
-    );
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--purple);
+  clip-path: polygon(
+      0 0,
+      calc(100% - var(--cut-x)) 0,
+      100% var(--cut-y),
+      100% 100%,
+      var(--cut-x) 100%,
+      0 calc(100% - var(--cut-y))
+  );
+  z-index: 0;
 }
 
 .hud-card-content::after {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    background: var(--black);
-    clip-path: polygon(
-        0 0,
-        calc(100% - var(--cut-x)) 0,
-        100% var(--cut-y),
-        100% 100%,
-        var(--cut-x) 100%,
-        0 calc(100% - var(--cut-y))
-    );
-    z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--black);
+  clip-path: polygon(
+      0 0,
+      calc(100% - var(--cut-x)) 0,
+      100% var(--cut-y),
+      100% 100%,
+      var(--cut-x) 100%,
+      0 calc(100% - var(--cut-y))
+  );
+  z-index: 1;
 }
 
-.hud-card-content {
-    position: relative;
-    z-index: 1;
-}
-
+/* Conteúdo interno do painel */
 .hud-card-content-inner {
-    position: relative;
-    z-index: 2;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
-.hud-indicator{
-    position:absolute;
-    top:-21px;
-    right:-6px;
-
-    width:20px;
-    height:30px;
-
-    color:var(--light);
-
-    filter:
-        drop-shadow(0 0 4px var(--pink))
-        drop-shadow(0 0 12px var(--pink))
-        drop-shadow(0 0 20px var(--pink));
-
-    z-index:5;
+/* Estado ABERTO do painel */
+.hud-panel.open .hud-card-content {
+  grid-template-rows: 1fr;
+  padding: 2rem 1.5rem;
+  opacity: 1;
 }
 
-.hud-indicator svg{
-    width:100%;
-    height:100%;
-    display:block;
+/* LUZ DO INDICADOR (Lado superior) */
+.hud-indicator {
+  position: absolute;
+  top: -21px;
+  right: -6px;
+  width: 20px;
+  height: 30px;
+  color: var(--light);
+  opacity: 0.15;
+  filter: none;
+  z-index: 5;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.hud-indicator svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Estado aceso do indicador (acionado pelo JS) */
+.hud-panel.open .hud-indicator.active {
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 4px var(--pink))
+    drop-shadow(0 0 12px var(--pink))
+    drop-shadow(0 0 20px var(--pink));
 }
 
 .hud-card-content-inner .title-dados{
@@ -1483,6 +1530,15 @@ filter:
   z-index:-1;
 }
 
+.project-desktop-link,
+.project-hover-preview {
+  display: none !important;
+}
+
+.project-card-mobile,
+.subtitle-mobile-only {
+  display: block;
+}
 
 
 
@@ -1991,7 +2047,418 @@ BREAKPOINT 780px DESKTOP
     margin-top:-1.75rem;
   }
 
- 
+  /* PAINEL FORMAÇAO */
+
+      /* Ajuste de margens e largura no Desktop */
+  .hud-panel {
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .hud-card-title {
+    width: 100%;
+  }
+
+  /* Mantém o display grid da transição e ajusta a altura zero quando fechado */
+  .hud-card-content {
+    width: 100%;
+  }
+
+  /* Grid das duas colunas (Ferramentas à esquerda / Texto e Currículo à direita) */
+  .hud-card-content-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "apps title"
+      "apps subtitle"
+      "apps curriculum"
+      "apps graphic";
+    align-items: start;
+    gap: 1rem 2rem;
+    width: 100%;
+  }
+
+  .grid-container {
+    grid-area: apps;
+    grid-row: 1 / 5;
+    align-self: center;
+  }
+
+  .title-dados {
+    grid-area: title;
+  }
+
+  .subtitle-dados {
+    grid-area: subtitle;
+  }
+
+  .curriculo {
+    grid-area: curriculum;
+  }
+
+  .graphic {
+    grid-area: graphic;
+    display: none;
+  }
+
+/* SESSÃO CONTATO */
+
+#contact{
+  width: 100%;
+  position: relative;
+  /* border: 2px solid rgb(174, 255, 162); */
+
+  /* border: 2px solid pink; */
+}
+
+.contact-divisor{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0 2rem 0rem 2rem;
+  color: var(--purple);
+  font-family: var(--text3);
+  font-size: .8rem;
+}
+
+.contact-divisor .globe{
+  width: 28px;
+}
+
+.contact-divisor .retrotech{
+  letter-spacing: 1px;
+  margin-left: .4rem;
+  flex-shrink: 0;
+}
+
+.contact-divisor .comunications{
+  font-family: var(--text2);
+  margin: 0 .3rem 0 .2rem;
+  flex-shrink: 0;
+}
+
+
+
+.contact-divisor .line-globe{
+  /* border: 2px solid red; */
+  width:100%;
+  height:.02rem;
+  background: var(--pink2);
+}
+
+.contact-divisor .bars{
+  flex-shrink: 0;
+  margin-left: .3rem;
+  /* margin-right: .1rem; */
+  color: var(--pink2);
+}
+
+
+.contact-scene{
+  position: relative;
+    /* border: 2px solid red; */
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.contact-overlay{
+  position:absolute;
+  inset:0;
+  /* z-index: 2; */
+}
+
+.droid{
+  display: block;
+  position: relative;
+  width: 70%;
+  margin-left: auto;
+  z-index: 0;
+}
+
+.linha-direta{
+  position:absolute;
+  top:.01%;
+  left:0;
+  width:40%;
+  /* height: 40%; */
+  /* border: 2px solid blueviolet; */
+}
+
+
+/* --------------- */
+
+
+
+.contact-container{
+  position:absolute;
+  top:40%;
+  /* border: 1px solid #ec1e25; */
+
+  left:1.5rem;
+  width:34%;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+
+.contact-text{
+  /* position: absolute; */
+  font-size: 1.5rem;
+  color: var(--light-purple);
+  /* border: 2px solid forestgreen; */
+  /* top:42%; */
+  left: 1rem;
+  width:100%;
+}
+
+.contact-text .text1{
+  font-family: var(--text2);
+}
+
+.text1 span{
+  color: var(--pink2);
+}
+
+.contact-text .mini-line{
+  width: 35%;
+
+   /* width: 80%;
+  height:.07rem;
+  background-image: linear-gradient(to right, var(--pink2), var(--black)); */
+
+  height:.07rem;
+  background: var(--pink2);
+  margin: 1rem 0;
+}
+
+.contact-text .text2{
+  font-size: 1.3rem;
+  font-family: var(--text);
+}
+
+
+
+
+.contact-links{
+  /* border: 1px solid mediumturquoise; */
+  /* position:absolute; */
+  /* margin-top: .5rem; */
+  position:relative;
+  /* padding:1rem; */
+  width:fit-content;
+  height:auto;
+  align-self:flex-start;
+  /* left: 1rem; */
+  /* bottom: 1rem; */
+}
+
+.contact-frame{
+  /* border: 1px solid #a072ff; */
+  position:absolute;
+  /* margin-top: .5rem; */
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+
+
+.contact-frame path{
+  fill:none;
+  stroke:var(--pink2);
+  stroke-width: .5px;
+}
+
+.links-content{
+  /* border: 1px solid yellow; */
+  position:relative;
+  z-index:2;
+  padding: .8rem .8rem;
+}
+
+.link-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.link-text strong{
+  /* border: 1px solid #ec1e25; */
+  font-family: var(--text-dot);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height:1;
+}
+
+.link-text span{
+  font-family: var(--text2);
+  color: var(--light-purple);
+  line-height:1;
+  font-size:1.3rem;
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+.contact-links .icon img{
+  /* border: 1px solid #ec1e25; */
+  height: 1rem;
+  align-self: flex-start;
+  /* left: 2rem; */
+  /* bottom: 10%; */
+}
+
+.icon:hover{
+  /* border: 1px solid #5fd2ff; */
+  filter:
+    drop-shadow(0 0 5px rgba(253, 44, 121, 0.746))
+  drop-shadow(0 0 5px rgba(253, 44, 121, 0.622))
+  drop-shadow(0 0 15px rgba(253, 44, 121, 0.513));
+}
+
+.contact-links a{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  text-decoration: none;
+  color: var(--pink2);
+}
+
+.links-content .line-links{
+  height:.03rem;
+  background: var(--pink2);
+  margin: 1rem 0;
+}
+
+/* ----------------- *	CTA	* ----------------- */ 
+ .contact-cta{
+  width:45%;
+  margin: 0rem auto 2rem;
+  justify-content: left;
+}
+
+.contact-cta img{
+  display:block;
+  width:100%;
+}
+
+
+
+.project-card-mobile,
+  .subtitle-mobile-only {
+    display: none !important;
+  }
+
+  /* Exibe a estrutura em lista textual no Desktop */
+  .project-desktop-link {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 1rem;
+    text-decoration: none;
+    color: var(--purple);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .project-item-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .project-number {
+    font-family: var(--text2);
+    font-size: 1.1rem;
+    color: var(--pink2);
+    opacity: 0.8;
+  }
+
+  .project-title {
+    font-family: var(--title2);
+    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .project-category {
+    font-family: var(--text);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--light-purple);
+    letter-spacing: 1px;
+  }
+
+  .project-arrow {
+    font-size: 1.6rem;
+    color: var(--pink2);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  /* Animação do Hover no Desktop: Título desliza para a direita */
+  .project-desktop-link:hover .project-title {
+    transform: translateX(20px);
+    color: var(--light);
+    text-shadow:
+      0 0 8px var(--pink),
+      0 0 18px var(--pink);
+  }
+
+  .project-desktop-link:hover .project-arrow {
+    transform: translate(6px, -6px);
+    color: var(--light);
+  }
+
+  /* Container da Miniatura Flutuante (Persegue o Cursor) */
+  /* Container da Miniatura Flutuante (Posicionada à direita do cursor) */
+  .project-hover-preview {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 180px; /* Proporção 16:9 ideal para telas e prints */
+    pointer-events: none;
+    z-index: 9999;
+    border: 1px solid var(--purple);
+    background: var(--black);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      0 0 20px rgba(253, 44, 120, 0.5),
+      0 10px 30px rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    /* Alinha verticalmente pelo centro do cursor (-50%) */
+    transform: translateY(-50%) scale(0.85);
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* FORÇA A IMAGEM A FICAR TOTALMENTE VISÍVEL SEM CORTAR */
+  .project-hover-preview img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Mostra a imagem inteira sem cortes */
+    background: var(--black);
+    display: block;
+  }
+
+  /* Exibe o preview quando ativo */
+  .project-hover-preview.active {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+
+
+
+
   /* =========================================================
 CHOQUE DESKTOP
 ========================================================= */
@@ -2068,11 +2535,11 @@ CHOQUE DESKTOP
   font-size: var(--text-size);
   font-family: var(--text);
   /* background-color: #ffa4e1; */
-  color: var(--purple);
+  /* color: var(--purple); */
   line-height: 1.8;
   letter-spacing: 0.05em;
-   text-shadow:
-    /* outline preto */
+   /* text-shadow:
+    outline preto
     1.5px 0 0 #000,
    -1.5px 0 0 #000,
     0 1.5px 0 #000,
@@ -2083,7 +2550,7 @@ CHOQUE DESKTOP
    -1.5px -1.5px 0 #000;
    filter:
   drop-shadow(0 0 15px rgba(89, 0, 255, 0.713));
-    z-index: 2;
+    z-index: 2; */
 }
 
 .title{
@@ -2148,13 +2615,15 @@ CHOQUE DESKTOP
   /* background-color: #ffa4e1; */
   font-family: var(--text);
   text-indent: 3rem;
-  color: var(--purple);
-  /* color: #a031ae; */
-  line-height: 1.8;
+  /* color: var(--purple); */
+  /* color: #81648e; */
+  /* color: #ff98d4; */
+  /* color: #ffa4e1; */
+  /* line-height: 1.8; */
   letter-spacing: 0.05em;
   text-align: justify;
-    text-shadow:
-    /* outline preto */
+    /* text-shadow:
+    outline preto
     1.5px 0 0 #000,
    -1.5px 0 0 #000,
     0 1.5px 0 #000,
@@ -2162,10 +2631,10 @@ CHOQUE DESKTOP
     1.5px 1.5px 0 #000,
    -1.5px 1.5px 0 #000,
     1.5px -1.5px 0 #000,
-   -1.5px -1.5px 0 #000;
-   filter:
+   -1.5px -1.5px 0 #000; */
+   /* filter:
   drop-shadow(0 0 15px rgba(89, 0, 255, 0.713));
-    z-index: 2;
+    z-index: 2; */
 }
 
 
